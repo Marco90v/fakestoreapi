@@ -1,1 +1,82 @@
+header {
+  display: grid;
+  background-color: aliceblue;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+header > .toggle {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+header > .toggle > div {
+  height: 3px;
+  background-color: black;
+  width: 30px;
+  margin: 5px 0;
+}
+header > h1 {
+  font-size: 18px;
+  padding: 1rem 0;
+}
+header > ul {
+  list-style: none;
+  display: grid;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s ease-in-out;
+}
+header > ul.active {
+  height: 13rem;
+}
+header > ul > li {
+  display: inline;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+header > div {
+  padding: 0.5rem 0;
+}
+.slide > picture > img {
+  width: 100%;
+}
+.listProduct > ul{
+  margin: auto;
+  width: 90%;
+  list-style: none;
+}
+.listProduct > ul > li{
+  margin: 2rem 0;
+}
+.listProduct > ul > li > picture > img {
+  width: 100%;
+  margin: auto;
+}
+.listProduct > ul > li > .like > svg {
+  color: red;
+}
+.priceProduct, .like {
+  display: inline;
+}
+.like{
+  float: right;
+}
 
+@media (min-width:1000px) {
+  header {
+    grid-template-columns: auto 41rem;
+    align-items: center;
+    justify-items: start;
+    height: 5rem;
+  }
+  header > .toggle {
+    display: none;
+  }
+  header > ul {
+    display: inline;
+    height: 1rem;
+  }
+  header > ul > li {
+    padding-right: 2rem;
+  }
+}
