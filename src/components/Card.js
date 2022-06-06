@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { NavLink } from "react-router-dom";
 import Like from "./Like";
 
 const Card = ({item}) => {
@@ -16,6 +17,7 @@ const Card = ({item}) => {
                 <p className="priceProduct">{price} $</p>
                 <Like id={id} />
             </div>
+            <NavLink to={`details/${id}`}>Details</NavLink>
         </li>
     );
 }

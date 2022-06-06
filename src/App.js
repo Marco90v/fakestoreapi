@@ -7,6 +7,7 @@ import { useContext, useEffect } from 'react';
 import { userContext } from './context/Context';
 import Login from './view/Login';
 import User from './view/User';
+import Details from './view/Details';
 
 function App() {
   // console.log('App');
@@ -37,6 +38,7 @@ function App() {
         <Route path="/product/:category" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user" element={<User />} />
+        <Route path="/details/:id" element={<Details />} />
       </Routes>
     </>
   );

@@ -76,7 +76,11 @@ header > div {
   border: 1px solid rgb(128 128 128 / 50%);
   padding: 1rem;
   border-radius: 0 1rem;
-  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  /* cursor: pointer; */
 }
 .listProduct > ul > li:hover > picture > img {
   transform: scale(1.1);
@@ -84,7 +88,30 @@ header > div {
 .listProduct > ul > li > picture > img {
   width: 100%;
   margin: auto;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+.listProduct > ul > li > a {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  background-color: white;
+  opacity: 0;
+  text-decoration: none;
+  color: black;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.listProduct > ul > li:hover > a {
+  bottom: 50%;
+  opacity: 1;
+}
+.listProduct > ul > li > a:hover {
+  background-color: black;
+  color: white ;
 }
 .like{
   float: right;
@@ -99,7 +126,7 @@ header > div {
 a {
   font-size: 1.3rem;
 }
-.login {
+.login, .details {
   margin-top: 7rem;
 }
 .login > form > label,
@@ -174,7 +201,23 @@ a {
   box-shadow: 0 0 10px 1px rgb(255 0 0 / 50%);
   color: white;
 }
-
+.details{
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 90%;
+  margin: 7rem auto;
+}
+.details > picture > img {
+  max-width: 100%;
+}
+.detail{
+  display: grid;
+  grid-template-columns: 6rem auto;
+  margin-top: 2rem;
+}
+.detail > label {
+  font-weight: bold;
+}
 @media (min-width:1000px) {
   header {
     grid-template-columns: auto 50rem;
@@ -213,7 +256,37 @@ a {
   .firstname, .lastname, .username, .email, .address {
     grid-template-columns: 10rem auto;
   }
+  .firstname > label, .lastname > label, .username > label, .email > label, .address > label {
+    font-weight: bold;
+  }
   .user input {
     margin-left: 1rem;
+  }
+  .details {
+    grid-template-columns: 30rem auto;
+    grid-column-gap: 5rem;
+  }
+  .detail {
+    align-items: center;
+  }
+  .detail > button {
+    max-width: 8rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0 128 0 / 50%);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  .detail > button:hover {
+    background-color: rgb(0 128 0);
+    color: white;
+    box-shadow: 0 0 10px 1px rgb(0 128 0 / 50%);
+  }
+  .detail > input[type='number']{
+    border: 1px solid rgb(128 128 128 / 50%);
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
   }
 }
