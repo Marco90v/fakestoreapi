@@ -16,9 +16,11 @@ header > .toggle > div {
   width: 30px;
   margin: 5px 0;
 }
-header > h1 {
+header > h1 > a {
   font-size: 2rem;
   padding: 1rem 0;
+  color: black;
+  text-decoration: none;
 }
 header > ul {
   list-style: none;

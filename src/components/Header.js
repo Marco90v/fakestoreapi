@@ -35,7 +35,7 @@ const Header = () => {
                 <div></div>
                 <div></div>
             </div>
-            <h1>Fake Storage</h1>
+            <h1><NavLink to="/" >Fake Storage</NavLink></h1>
             <ul className={(toggle && width < 1000) ? 'active' : ''}>
                 <li><NavLink to="Product/all" style={ linkActive }>All Products</NavLink></li>
                 {
