@@ -5,15 +5,18 @@ import Home from './view/Home';
 import Product from './components/Product';
 import { useContext, useEffect } from 'react';
 import { userContext } from './context/Context';
+import Login from './view/Login';
+import User from './view/User';
 
 function App() {
+  // console.log('App');
   const { dispatch } = useContext(userContext);
   
   const getProducts =  async () => {
     const rest = await fetch('https://fakestoreapi.com/products').then(e=>e.json());
     dispatch({type:"newData", data:rest});
   };
-  
+
   const getCategorys =  async () => {
     const rest = await fetch('https://fakestoreapi.com/products/categories').then(e=>e.json());
     dispatch({type:"newCategorys", categorys:rest});
@@ -32,6 +35,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:category" element={<Product />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </>
   );
