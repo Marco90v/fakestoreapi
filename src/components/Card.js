@@ -1,7 +1,10 @@
+import { memo } from "react";
 import Like from "./Like";
 
 const Card = ({item}) => {
-    const {image,title,price} = item;
+    // console.log('Card');
+
+    const {image,title,price,id} = item;
     
     return(
         <li>
@@ -11,10 +14,10 @@ const Card = ({item}) => {
             <div className="datos">
                 <h2 className="nameProduct">{title}</h2>
                 <p className="priceProduct">{price} $</p>
-                <Like />
+                <Like id={id} />
             </div>
         </li>
     );
 }
 
-export default Card;
+export default memo(Card);
