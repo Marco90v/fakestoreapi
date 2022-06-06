@@ -3,13 +3,21 @@ import { createContext, useReducer } from "react";
 const userContext = createContext();
 
 const initialState = {
-    products:[]
+    products:[],
+    categorys:[
+        "electronics",
+        "jewelery",
+        "men's clothing",
+        "women's clothing"
+    ]
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
         case 'newData':
-            return { ...state , data: action.rest };
+            return { ...state , products: action.data };
+        case 'newCategorys':
+            return { ...state , categorys: action.categorys };
         default:
             return state;
     }

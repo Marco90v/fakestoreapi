@@ -7,8 +7,8 @@ const Home = () => {
         <>
             <div className='slide'>
             <picture>
-                <source media="(max-width: 999px)" srcset={img2} />
-                <source media="(min-width: 1000px)" srcset={img1} />
+                <source media="(max-width: 999px)" srcSet={img2} />
+                <source media="(min-width: 1000px)" srcSet={img1} />
                 <img src={img1} alt="" />
             </picture>
             </div>

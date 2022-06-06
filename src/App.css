@@ -1,12 +1,13 @@
 header {
   display: grid;
-  background-color: aliceblue;
+  background-color: #d6dbde;
   grid-template-columns: 100%;
   justify-items: center;
 }
 header > .toggle {
   position: absolute;
   right: 1rem;
+  top: 0.2rem;
   cursor: pointer;
 }
 header > .toggle > div {
@@ -16,7 +17,7 @@ header > .toggle > div {
   margin: 5px 0;
 }
 header > h1 {
-  font-size: 18px;
+  font-size: 2rem;
   padding: 1rem 0;
 }
 header > ul {
@@ -27,12 +28,20 @@ header > ul {
   transition: height 0.5s ease-in-out;
 }
 header > ul.active {
-  height: 13rem;
+  height: 15rem;
 }
 header > ul > li {
   display: inline;
   padding: 0.5rem 0;
   text-align: center;
+}
+header > ul > li:hover > a {
+  text-shadow: 2px 2px white;
+}
+header > ul > li > a {
+  text-decoration: none;
+  color: black;
+  transition: text-shadow 0.2s ease-in-out;
 }
 header > div {
   padding: 0.5rem 0;
@@ -40,43 +49,88 @@ header > div {
 .slide > picture > img {
   width: 100%;
 }
+.listProduct {
+  padding-top: 2rem;
+}
 .listProduct > ul{
   margin: auto;
   width: 90%;
   list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
 }
 .listProduct > ul > li{
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto 4rem;
+
+  border: 1px solid rgb(128 128 128 / 50%);
+  padding: 1rem;
+  border-radius: 0 1rem;
 }
 .listProduct > ul > li > picture > img {
   width: 100%;
   margin: auto;
 }
-.listProduct > ul > li > .like > svg {
+.like{
+  float: right;
+  cursor: pointer;
+}
+.like > svg {
   color: red;
 }
 .priceProduct, .like {
   display: inline;
 }
-.like{
-  float: right;
+a {
+  font-size: 1.3rem;
 }
+/* .datos {
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 5px;
+  padding: 0.5rem;
+
+} */
 
 @media (min-width:1000px) {
   header {
-    grid-template-columns: auto 41rem;
+    grid-template-columns: auto 50rem;
     align-items: center;
     justify-items: start;
     height: 5rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  header > h1 {
+    margin-left: 2rem;
   }
   header > .toggle {
     display: none;
   }
   header > ul {
     display: inline;
-    height: 1rem;
+    height: 1.5rem;
   }
   header > ul > li {
-    padding-right: 2rem;
+    /* padding-right: 2rem; */
+    padding: 0 1rem;
+  }
+  .slide {
+    margin-top: 5rem;
+  }
+  /* .listProduct > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+  } */
+  .listProduct > ul > li {
+    max-width: 20rem;
   }
 }

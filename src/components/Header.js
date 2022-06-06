@@ -1,7 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { userContext } from "../context/Context";
+
+const linkActiveStyle = {
+    borderBottom: "1px solid black",
+};
 
 const Header = () => {
+    const { state } = useContext(userContext);
     const [toggle, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -9,6 +15,10 @@ const Header = () => {
         setWidth(window.innerWidth);
         width > 1000 && setToggle(false);
     },[width]);
+
+    const linkActive = ({isActive}) => isActive? linkActiveStyle : undefined;
+
+    const capitalizeString = (str) => str[0].toUpperCase() + str.slice(1);
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
@@ -24,12 +34,20 @@ const Header = () => {
             </div>
             <h1>Fake Storage</h1>
             <ul className={(toggle && width < 1000) ? 'active' : ''}>
-                <li><Link to='Product/all'>All Products</Link></li>
-                <li><Link to='Product/electronics'>Electronics</Link></li>
-                <li><Link to='Product/jewelery'>Jewelery</Link></li>
-                <li><Link to='Product/menClothing'>Men's clothing</Link></li>
-                <li><Link to='Product/womenClothing'>Women's clothing</Link></li>
-                <li><Link to='Login'>Login</Link></li>
+                <li><NavLink to="Product/all" style={ linkActive }>All Products</NavLink></li>
+                {
+                    state.categorys.map((item, index) => 
+                        <li key={index}>
+                            <NavLink 
+                                to={`Product/${item.replace(' ', '%20')}`}
+                                style={ linkActive }
+                            >
+                                {capitalizeString(item)}
+                            </NavLink>
+                        </li>
+                    )
+                }
+                <li><NavLink to="Login" style={ linkActive }>Login</NavLink></li>
             </ul>
         </header>
     );
