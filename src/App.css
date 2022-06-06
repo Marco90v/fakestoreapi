@@ -52,6 +52,9 @@ header > div {
 .listProduct {
   padding-top: 2rem;
 }
+.listProduct picture {
+  overflow: hidden;
+}
 .listProduct > ul{
   margin: auto;
   width: 90%;
@@ -71,10 +74,15 @@ header > div {
   border: 1px solid rgb(128 128 128 / 50%);
   padding: 1rem;
   border-radius: 0 1rem;
+  cursor: pointer;
+}
+.listProduct > ul > li:hover > picture > img {
+  transform: scale(1.1);
 }
 .listProduct > ul > li > picture > img {
   width: 100%;
   margin: auto;
+  transition: transform 0.2s ease-in-out;
 }
 .like{
   float: right;
@@ -89,12 +97,81 @@ header > div {
 a {
   font-size: 1.3rem;
 }
-/* .datos {
+.login {
+  margin-top: 7rem;
+}
+.login > form > label,
+.login > form > input,
+.login > form > button {
+  font-size: 1.5rem;
+}
+.login > form > label {
+  font-weight: bold;
+}
+.login > form > button {
+  grid-column: span 2;
+  max-width: 10rem;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   border: 1px solid rgb(128 128 128 / 50%);
-  border-radius: 5px;
+  background-color: rgb(255 255 255);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.login > form > button:hover {
+  border: 1px solid rgb(255 255 255);
+  background-color: rgb(128 128 128 / 50%);
+}
+.login > form > input, .user input {
+  border: 1px solid rgb(128 128 128 / 50%);
+  border-radius: 0.5rem;
   padding: 0.5rem;
+}
+.login > form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 1rem;
+  align-items: center;
+  max-width: 50rem;
+  margin: auto;
+  position: relative;
+}
+.eyes {
+  position: absolute;
+  right: 1rem;
+  bottom: 4.4rem;
+  cursor: pointer;
+}
+.user {
+  /* margin-top: 7rem; */
+  width: 90%;
+  margin: 7rem auto;
+}
+.user label, .user input {
+  font-size: 1.5rem;
+}
 
-} */
+.firstname, .lastname, .username, .email, .address {
+  display: grid;
+  grid-template-columns: auto;
+  margin: 1rem 0;
+  align-items: center;
+}
+.user > button {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255 0 0 / 50%);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in, box-shadow 0.2s ease-in, color 0.2s ease-in;
+}
+.user > button:hover {
+  background-color: rgb(255 0 0);
+  box-shadow: 0 0 10px 1px rgb(255 0 0 / 50%);
+  color: white;
+}
 
 @media (min-width:1000px) {
   header {
@@ -106,6 +183,7 @@ a {
     left: 0;
     right: 0;
     top: 0;
+    z-index: 2;
   }
   header > h1 {
     margin-left: 2rem;
@@ -124,13 +202,16 @@ a {
   .slide {
     margin-top: 5rem;
   }
-  /* .listProduct > ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5rem;
-  } */
   .listProduct > ul > li {
     max-width: 20rem;
+  }
+  .user{
+    width: 50rem;
+  }
+  .firstname, .lastname, .username, .email, .address {
+    grid-template-columns: 10rem auto;
+  }
+  .user input {
+    margin-left: 1rem;
   }
 }
