@@ -3,11 +3,14 @@ header {
   background-color: #d6dbde;
   grid-template-columns: 100%;
   justify-items: center;
+  min-height: 3rem;
+  align-items: center;
+  box-shadow: 0 0 5px 1px rgb(128 128 128 / 50%);
 }
 header > .toggle {
   position: absolute;
   right: 1rem;
-  top: 0.2rem;
+  top: 0.1rem;
   cursor: pointer;
 }
 header > .toggle > div {
@@ -279,7 +282,6 @@ a {
 @media (min-width:1000px) {
   header {
     grid-template-columns: auto 50rem;
-    align-items: center;
     justify-items: start;
     height: 5rem;
     position: fixed;
