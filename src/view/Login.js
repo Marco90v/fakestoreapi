@@ -8,16 +8,19 @@ const Login = () => {
 
     const user = useRef();
     const pass = useRef();
-    const [visiblePass, setVisiblePass] = useState(false)
+    const [visiblePass, setVisiblePass] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const loginSession = async () => {
         try {
+            setLoading(true);
             const session = await fetch('https://fakestoreapi.com/users/1').then(res=>res.json());
             dispatch({type:'login',session});
             navigate("/", { replace: true });
         } catch (error) {
             console.log('Error de peticion Fetch');
         }
+        setLoading(false);
     }
 
     const submittion = (e) => {
@@ -46,7 +49,7 @@ const Login = () => {
                             </svg>
                     }
                 </div>
-                <button type="submit">Login</button>
+                <button className={!loading && "enable"} type="submit" disabled={loading}>Login</button>
             </form>
         </div>
     );
