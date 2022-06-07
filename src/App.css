@@ -209,14 +209,52 @@ a {
 }
 .details > picture > img {
   max-width: 100%;
+  border: 1px solid rgb(128 128 128 / 50%);
+  padding: 1rem;
+  border-radius: 0 2rem;
 }
 .detail{
   display: grid;
-  grid-template-columns: 6rem auto;
+  grid-template-columns: 7rem auto;
+  align-items: center;
   margin-top: 2rem;
+}
+.detail > h2 , .detail > label > span {
+  font-size: 1.5rem;
 }
 .detail > label {
   font-weight: bold;
+  margin: 0.5rem 0;
+}
+.detail > button {
+  max-width: 8rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(0 128 0 / 50%);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.detail > button.enable:hover {
+  background-color: rgb(0 128 0);
+  color: white;
+  box-shadow: 0 0 10px 1px rgb(0 128 0 / 50%);
+}
+.detail > button.delete {
+  background-color: rgb(255 0 0 / 50%);
+}
+.detail > button.delete:hover {
+  background-color: rgb(255 0 0);
+  box-shadow: 0 0 10px 1px rgb(255 0 0 / 50%);
+}
+.detail > button:disabled {
+  background-color: grey;
+}
+.detail > input[type='number']{
+  border: 1px solid rgb(128 128 128 / 50%);
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
 }
 @media (min-width:1000px) {
   header {
@@ -263,30 +301,9 @@ a {
     margin-left: 1rem;
   }
   .details {
+    max-width: 80rem;
     grid-template-columns: 30rem auto;
     grid-column-gap: 5rem;
   }
-  .detail {
-    align-items: center;
-  }
-  .detail > button {
-    max-width: 8rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: rgb(0 128 0 / 50%);
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  .detail > button:hover {
-    background-color: rgb(0 128 0);
-    color: white;
-    box-shadow: 0 0 10px 1px rgb(0 128 0 / 50%);
-  }
-  .detail > input[type='number']{
-    border: 1px solid rgb(128 128 128 / 50%);
-    padding: 0.5rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-  }
+  
 }

@@ -4,6 +4,7 @@ const userContext = createContext();
 
 const myFave = JSON.parse(localStorage.getItem('myFave')) || [];
 const user = JSON.parse(localStorage.getItem('user')) || undefined;
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const initialState = {
     products:[],
@@ -14,7 +15,8 @@ const initialState = {
         "women's clothing"
     ],
     myFave,
-    user
+    user,
+    cart
 };
 
 const reducer = (state, action) => {
@@ -37,6 +39,14 @@ const reducer = (state, action) => {
         case 'signOff':
             localStorage.removeItem('user');
             return {...state, user: undefined};
+        case 'addCart':
+            const cartProduct = [...state.cart , action.newProduct];
+            localStorage.setItem('cart',JSON.stringify(cartProduct));
+            return { ...state , cart: cartProduct };
+        case 'deleteCart':
+            const cartProduct2 = state.cart.filter(item=>item.id!==action.product);
+            localStorage.setItem('cart' , JSON.stringify(cartProduct2));
+            return { ...state , cart: cartProduct2 };
         default:
             return state;
     }
