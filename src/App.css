@@ -54,10 +54,14 @@ header > div {
 .listProduct {
   padding-top: 2rem;
 }
-.listProduct picture {
+.listProduct picture,
+.cart picture,
+.likes picture {
   overflow: hidden;
 }
-.listProduct > ul{
+.listProduct > ul,
+.cart > ul,
+.likes > ul {
   margin: auto;
   width: 90%;
   list-style: none;
@@ -67,8 +71,9 @@ header > div {
   justify-content: center;
   gap: 5rem;
 }
-.listProduct > ul > li{
-  /* margin: 2rem 0; */
+.listProduct > ul > li,
+.cart > ul > li,
+.likes > ul > li {
   display: grid;
   align-items: center;
   grid-template-rows: auto 4rem;
@@ -79,18 +84,20 @@ header > div {
 
   position: relative;
   overflow: hidden;
-
-  /* cursor: pointer; */
 }
 .listProduct > ul > li:hover > picture > img {
   transform: scale(1.1);
 }
-.listProduct > ul > li > picture > img {
+.listProduct > ul > li > picture > img,
+.cart > ul > li > picture > img,
+.likes > ul > li > picture > img {
   width: 100%;
   margin: auto;
   transition: transform 0.5s ease-in-out;
 }
-.listProduct > ul > li > a {
+.listProduct > ul > li > a,
+.cart > ul > li > a,
+.likes > ul > li > a {
   position: absolute;
   bottom: -50px;
   left: 50%;
@@ -105,11 +112,15 @@ header > div {
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
-.listProduct > ul > li:hover > a {
+.listProduct > ul > li:hover > a,
+.cart > ul > li:hover > a,
+.likes > ul > li:hover > a {
   bottom: 50%;
   opacity: 1;
 }
-.listProduct > ul > li > a:hover {
+.listProduct > ul > li > a:hover,
+.cart > ul > li > a:hover,
+.likes > ul > li > a:hover {
   background-color: black;
   color: white ;
 }
@@ -148,11 +159,12 @@ a {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.login > form > button:hover {
+.login > form > button.enable:hover {
   border: 1px solid rgb(255 255 255);
   background-color: rgb(128 128 128 / 50%);
 }
-.login > form > input, .user input {
+.login > form > input,
+.datosUser input {
   border: 1px solid rgb(128 128 128 / 50%);
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -177,7 +189,7 @@ a {
   width: 90%;
   margin: 7rem auto;
 }
-.user label, .user input {
+.datosUser label, .datosUser input {
   font-size: 1.5rem;
 }
 
@@ -187,7 +199,7 @@ a {
   margin: 1rem 0;
   align-items: center;
 }
-.user > button {
+.datosUser > button {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background-color: rgb(255 0 0 / 50%);
@@ -196,7 +208,7 @@ a {
   cursor: pointer;
   transition: background-color 0.2s ease-in, box-shadow 0.2s ease-in, color 0.2s ease-in;
 }
-.user > button:hover {
+.datosUser > button:hover {
   background-color: rgb(255 0 0);
   box-shadow: 0 0 10px 1px rgb(255 0 0 / 50%);
   color: white;
@@ -256,6 +268,14 @@ a {
   margin-right: 1rem;
   border-radius: 0.5rem;
 }
+.cart > h2,
+.likes > h2,
+.datosUser > h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  text-decoration: underline;
+}
 @media (min-width:1000px) {
   header {
     grid-template-columns: auto 50rem;
@@ -285,11 +305,16 @@ a {
   .slide {
     margin-top: 5rem;
   }
-  .listProduct > ul > li {
+  .listProduct > ul > li,
+  .cart > ul > li,
+  .likes > ul > li {
     max-width: 20rem;
   }
-  .user{
+  .datosUser,
+  .cart,
+  .likes{
     width: 50rem;
+    margin: auto;
   }
   .firstname, .lastname, .username, .email, .address {
     grid-template-columns: 10rem auto;
@@ -297,7 +322,7 @@ a {
   .firstname > label, .lastname > label, .username > label, .email > label, .address > label {
     font-weight: bold;
   }
-  .user input {
+  .datosUser input {
     margin-left: 1rem;
   }
   .details {
