@@ -40,7 +40,10 @@ const Details = () => {
     }
 
     const getProductId = async () => {
-        const rest = await fetch(`https://fakestoreapi.com/products/${id}`).then(item=>item.json());
+        const rest = await fetch(`https://fakestoreapi.com/products/${id}`,{
+            cache: 'no-cache',
+            referrerPolicy: "unsafe-url"
+          }).then(item=>item.json());
         setData(rest);
         getProductCart();
     }   

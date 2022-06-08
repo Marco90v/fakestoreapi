@@ -14,12 +14,18 @@ function App() {
   const { dispatch } = useContext(userContext);
   
   const getProducts =  async () => {
-    const rest = await fetch('https://fakestoreapi.com/products').then(e=>e.json());
+    const rest = await fetch('https://fakestoreapi.com/products',{ 
+      cache: 'no-cache',
+      referrerPolicy: "unsafe-url"
+    }).then(e=>e.json());
     dispatch({type:"newData", data:rest});
   };
 
   const getCategorys =  async () => {
-    const rest = await fetch('https://fakestoreapi.com/products/categories').then(e=>e.json());
+    const rest = await fetch('https://fakestoreapi.com/products/categories',{
+      cache: 'no-cache',
+      referrerPolicy: "unsafe-url"
+    }).then(e=>e.json());
     dispatch({type:"newCategorys", categorys:rest});
   };
 

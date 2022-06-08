@@ -14,7 +14,10 @@ const Login = () => {
     const loginSession = async () => {
         try {
             setLoading(true);
-            const session = await fetch('https://fakestoreapi.com/users/1').then(res=>res.json());
+            const session = await fetch('https://fakestoreapi.com/users/1',{
+                cache: 'no-cache',
+                referrerPolicy: "unsafe-url"
+              }).then(res=>res.json());
             dispatch({type:'login',session});
             navigate("/fakestoreapi", { replace: true });
         } catch (error) {
