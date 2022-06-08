@@ -1,13 +1,14 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { userContext } from './context/Context';
 import Header from './components/Header';
 import Home from './view/Home';
 import Product from './components/Product';
-import { useContext, useEffect } from 'react';
-import { userContext } from './context/Context';
 import Login from './view/Login';
 import User from './view/User';
 import Details from './view/Details';
+import Footer from './components/Footer';
 
 function App() {
   // console.log('App');
@@ -40,6 +41,7 @@ function App() {
         <Route path="/user" element={<User />} />
         <Route path="/details/:id" element={<Details />} />
       </Routes>
+      <Footer />
     </>
   );
 }

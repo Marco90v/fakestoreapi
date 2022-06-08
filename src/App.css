@@ -74,7 +74,6 @@ header > div {
   margin: auto;
   width: 90%;
   list-style: none;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -86,11 +85,9 @@ header > div {
   display: grid;
   align-items: center;
   grid-template-rows: auto 4rem;
-
   border: 1px solid rgb(128 128 128 / 50%);
   padding: 1rem;
   border-radius: 0 1rem;
-
   position: relative;
   overflow: hidden;
 }
@@ -194,14 +191,12 @@ a {
   cursor: pointer;
 }
 .user {
-  /* margin-top: 7rem; */
   width: 90%;
   margin: 7rem auto;
 }
 .datosUser label, .datosUser input {
   font-size: 1.5rem;
 }
-
 .firstname, .lastname, .username, .email, .address {
   display: grid;
   grid-template-columns: auto;
@@ -285,6 +280,27 @@ a {
   margin: 2rem 0;
   text-decoration: underline;
 }
+footer {
+  /* height: 5rem; */
+  background-color: black;
+  color: white;
+  margin-top: 5rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+footer > ul {
+  list-style: none;
+}
+footer > ul > li {
+  margin: 0.5rem 0;
+}
+footer > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+footer > p {
+  font-weight: bold;
+}
 @media (min-width:1000px) {
   header {
     grid-template-columns: auto 50rem;
@@ -307,7 +323,6 @@ a {
     height: 1.5rem;
   }
   header > ul > li {
-    /* padding-right: 2rem; */
     padding: 0 1rem;
   }
   .slide {
@@ -321,7 +336,6 @@ a {
     color: rgb(60 59 59);
   }
   .slide > p:nth-child(2) {
-    /* top: 30%; */
     top: 100%;
     font-size: 2rem;
     animation-duration: 8s;
@@ -329,7 +343,6 @@ a {
     animation-iteration-count: infinite;
   }
   .slide > p:last-child {
-    /* top: 40%; */
     top: 120%;
     font-size: 5rem;
     animation-duration: 8s;
@@ -360,6 +373,13 @@ a {
     max-width: 80rem;
     grid-template-columns: 30rem auto;
     grid-column-gap: 5rem;
+  }
+  footer > ul > li {
+    margin: 0 1rem;
+    display: inline;
+  }
+  footer > p {
+    margin-top: 1rem;
   }
   @keyframes p1 {
     0% {
