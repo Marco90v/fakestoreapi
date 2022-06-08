@@ -10,7 +10,7 @@ const User = () => {
 
     const signOff = () => {
         dispatch({type:'signOff'});
-        navigate("/", { replace: true });
+        navigate("/fakestoreapi", { replace: true });
     }
 
     return(

@@ -34,11 +34,11 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:category" element={<Product />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/user" element={<User />} />
-        <Route path="/details/:id" element={<Details />} />
+        <Route path="fakestoreapi/" element={<Home />} />
+        <Route path="fakestoreapi/product/:category" element={<Product />} />
+        <Route path="fakestoreapi/login" element={<Login />} />
+        <Route path="fakestoreapi/user" element={<User />} />
+        <Route path="fakestoreapi/details/:id" element={<Details />} />
       </Routes>
       <Footer />
     </>

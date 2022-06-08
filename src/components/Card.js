@@ -16,7 +16,7 @@ const Card = ({item}) => {
                 <p className="priceProduct">{price} $</p>
                 <Like id={id} />
             </div>
-            <NavLink to={`../details/${id}`}>Details</NavLink>
+            <NavLink to={`../fakestoreapi/details/${id}`}>Details</NavLink>
         </li>
     );
 }

@@ -16,7 +16,7 @@ const Login = () => {
             setLoading(true);
             const session = await fetch('https://fakestoreapi.com/users/1').then(res=>res.json());
             dispatch({type:'login',session});
-            navigate("/", { replace: true });
+            navigate("/fakestoreapi", { replace: true });
         } catch (error) {
             console.log('Error de peticion Fetch');
         }
