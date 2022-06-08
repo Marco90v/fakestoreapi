@@ -25,9 +25,9 @@ const Login = () => {
 
     const submittion = (e) => {
         e.preventDefault();
-        // console.log(user.current.value , pass.current.value);
         loginSession();
     }
+    
     return(
         <div className="login">
             <form onSubmit={submittion}>

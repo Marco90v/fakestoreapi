@@ -4,8 +4,6 @@ import { userContext } from "../context/Context";
 import Card from "./Card";
 
 const Product = () => {
-    // console.log('Product');
-
     const { category } = useParams(); // undefined si no tiene parametro
     const { state } = useContext(userContext);
 

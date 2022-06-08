@@ -3,8 +3,6 @@ import img2 from '../assets/product-08.jpg';
 import Product from '../components/Product';
 
 const Home = () => {
-    // console.log('Home');
-
     return (
         <>
             <div className='slide'>

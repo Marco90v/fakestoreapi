@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Like from "./Like";
 
 const Card = ({item}) => {
-    // console.log(item);
 
     const {image,title,price,id} = item;
     

@@ -8,8 +8,6 @@ const linkActiveStyle = {
 };
 
 const Header = () => {
-    // console.log('Header');
-
     const { state } = useContext(userContext);
     const [toggle, setToggle] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);

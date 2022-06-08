@@ -11,7 +11,6 @@ import Details from './view/Details';
 import Footer from './components/Footer';
 
 function App() {
-  // console.log('App');
   const { dispatch } = useContext(userContext);
   
   const getProducts =  async () => {

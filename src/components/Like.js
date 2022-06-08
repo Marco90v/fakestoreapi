@@ -2,8 +2,6 @@ import { memo, useContext } from "react";
 import { userContext } from "../context/Context";
 
 const Like = ({id}) => {
-    // console.log('Like');
-
     const { state , dispatch } = useContext(userContext);
 
     const findFave = () => state.myFave.find(item=>item===id)
