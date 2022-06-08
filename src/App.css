@@ -51,8 +51,14 @@ header > ul > li > a {
 header > div {
   padding: 0.5rem 0;
 }
+.slide{
+  position: relative;
+}
 .slide > picture > img {
   width: 100%;
+}
+.slide > p {
+  opacity: 0;
 }
 .listProduct {
   padding-top: 2rem;
@@ -307,6 +313,29 @@ a {
   .slide {
     margin-top: 5rem;
   }
+  .slide > p {
+    opacity: 0;
+    position: absolute;
+    left: 10%;
+    font-weight: bolder;
+    color: rgb(60 59 59);
+  }
+  .slide > p:nth-child(2) {
+    /* top: 30%; */
+    top: 100%;
+    font-size: 2rem;
+    animation-duration: 8s;
+    animation-name: p1;
+    animation-iteration-count: infinite;
+  }
+  .slide > p:last-child {
+    /* top: 40%; */
+    top: 120%;
+    font-size: 5rem;
+    animation-duration: 8s;
+    animation-name: p2;
+    animation-iteration-count: infinite;
+  }
   .listProduct > ul > li,
   .cart > ul > li,
   .likes > ul > li {
@@ -332,5 +361,42 @@ a {
     grid-template-columns: 30rem auto;
     grid-column-gap: 5rem;
   }
+  @keyframes p1 {
+    0% {
+      opacity: 0;
+      top: 100%;
+    }
+    50% {
+      opacity: 1;
+      top: 30%;
+    }
+    90% {
+      opacity: 1;
+      top: 30%;
+    }
+    100% {
+      opacity: 0;
+      top: 30%;
+    }
+  }
+  @keyframes p2 {
+    0% {
+      opacity: 0;
+      top: 100%;
+    }
   
+    60% {
+      opacity: 1;
+      top: 40%;
+    }
+    90% {
+      opacity: 1;
+      top: 40%;
+    }
+    100% {
+      opacity: 0;
+      top: 40%;
+    }
+  }
+
 }

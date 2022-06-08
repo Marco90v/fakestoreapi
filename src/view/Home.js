@@ -8,11 +8,13 @@ const Home = () => {
     return (
         <>
             <div className='slide'>
-            <picture>
-                <source media="(max-width: 999px)" srcSet={img2} />
-                <source media="(min-width: 1000px)" srcSet={img1} />
-                <img src={img1} alt="" />
-            </picture>
+                <picture>
+                    <source media="(max-width: 999px)" srcSet={img2} />
+                    <source media="(min-width: 1000px)" srcSet={img1} />
+                    <img src={img1} alt="" />
+                </picture>
+                <p>Women Collection 2022</p>
+                <p>New Season</p>
             </div>
             <Product />
         </>
